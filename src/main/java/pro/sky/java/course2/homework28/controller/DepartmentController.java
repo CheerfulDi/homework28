@@ -31,7 +31,8 @@ public class DepartmentController {
     }
 
     @GetMapping(path = "/all")
-    public Collection<Employee> getEmployeesByDepartment(Integer departmentId) {
+    public Collection<Employee> getEmployeesByDepartment(
+            @RequestParam (required = false) Integer departmentId) {
         if (departmentId != null) {
             return departmentService.getEmployeesByDepartment(departmentId);
         }
