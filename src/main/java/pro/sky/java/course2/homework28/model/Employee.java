@@ -6,7 +6,6 @@ import static java.lang.String.format;
 
 public class Employee {
 
-//    private static int idCounter;
     private static final int MIN_DEPARTMENT = 1;
     private static final int MAX_DEPARTMENT = 5;
 
@@ -14,25 +13,15 @@ public class Employee {
     private final String lastName;
     private double salary;
     private Integer departmentId;
-//    private int id;
 
 
     public Employee(String firstName, String lastName, double salary, Integer departmentId) {
-//        idCounter++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
         this.departmentId = departmentId;
-//        this.id = getIdCounter();
     }
 
-//    public int getIdCounter() {
-//        return idCounter;
-//    }
-//
-//    public int getId() {
-//        return id;
-//    }
 
     public String getFirstName() {
         return firstName;

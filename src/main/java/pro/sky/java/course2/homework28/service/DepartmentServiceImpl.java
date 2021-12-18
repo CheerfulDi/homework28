@@ -1,6 +1,7 @@
 package pro.sky.java.course2.homework28.service;
 
 import org.springframework.stereotype.Service;
+import pro.sky.java.course2.homework28.exceptions.EmployeeNotFoundException;
 import pro.sky.java.course2.homework28.model.Employee;
 
 import java.util.Collection;
@@ -22,7 +23,7 @@ public class DepartmentServiceImpl implements DepartmentService{
         return employeeService.getEmployees().stream()
                 .filter(e -> e.getDepartmentId() == departmentId)
                 .min(Comparator.comparingDouble(Employee::getSalary))
-                .orElseThrow();
+                .orElseThrow(EmployeeNotFoundException::new);
     }
 
 
@@ -31,7 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService{
         return employeeService.getEmployees().stream()
                 .filter(e -> e.getDepartmentId() == departmentId)
                 .max(Comparator.comparingDouble(Employee::getSalary))
-                .orElseThrow();
+                .orElseThrow(EmployeeNotFoundException::new);
     }
 
     @Override
