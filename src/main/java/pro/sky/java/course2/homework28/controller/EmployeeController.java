@@ -1,5 +1,6 @@
 package pro.sky.java.course2.homework28.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +27,7 @@ public class EmployeeController {
                       @RequestParam double salary,
                       @RequestParam Integer departmentId) {
         employeeService.addToEmployeeList(firstName, lastName, salary, departmentId);
-        return "Сотрудник " + firstName + " " + lastName + " успешно добавлен в отдел " + departmentId;
+        return "Сотрудник " + StringUtils.capitalize(firstName) + " " + StringUtils.capitalize(lastName) + " успешно добавлен в отдел " + departmentId;
     }
 
     @GetMapping(path = "/remove")
@@ -37,7 +38,7 @@ public class EmployeeController {
 
     @GetMapping(path = "/find")
     public Employee find(@RequestParam String firstName, @RequestParam String lastName) {
-        return employeeService.findEmployee(firstName, lastName);
+        return employeeService.findEmployee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName));
     }
 
     @GetMapping(path = "/all")

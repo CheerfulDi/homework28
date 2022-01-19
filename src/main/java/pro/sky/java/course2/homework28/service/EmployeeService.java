@@ -17,4 +17,6 @@ public interface EmployeeService {
 
     Collection<Employee> getEmployees();
 
+    boolean checkStrings(String firstName, String lastName);
+
 }
