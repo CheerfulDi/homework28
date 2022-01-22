@@ -1,8 +1,6 @@
 package pro.sky.java.course2.homework28;
 
-import pro.sky.java.course2.homework28.model.Employee;
-
-public class EmployeeServiceTestConstants {
+public class TestConstants {
 
     //Employee1
     public static final String DEFAULT_NAME1 = "Иван";
@@ -18,4 +16,6 @@ public class EmployeeServiceTestConstants {
     public static final String DEFAULT_LAST_NAME2 = "Петров";
     public static final double SALARY2 = 250_000;
     public static final Integer DEPARTMENT2 = 2;
+
+    public static final Integer DEPARTMENT3 = 3;
 }
